@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::middleware(['auth:sanctum', 'verified'])->get('/root', 'Dashboard@index')->name('root');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'Dashboard@index')->name('dashboard');
 Route::group(['middleware' => ['auth:sanctum', 'verified'] ], function () {
     Route::group(['prefix' => 'log-calories',], function () {
