@@ -61,7 +61,7 @@
 
             @if (session('suggested_menu'))
                 <div class="alert alert-info alert-dismissible fade show" role="alert">
-                    <p>{{ session('suggested_menu')->menu }}</p>
+                    <p>Menu selanjutnya yang bisa dimakan adalah : {{ session('suggested_menu')->menu }}</p>
                     <p>Jumlah kalori {{ session('suggested_menu')->calories }} Kkal</p> 
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
