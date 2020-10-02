@@ -76,7 +76,7 @@ class LogCaloriesUser extends Controller
 
         $logCalories->save();
         $message = [
-            'success' => 'Log kamu berhasil disimpan, saat ini kalori-mu adalah : {$userTotalCaloriesByDay}',
+            'success' => 'Log kamu berhasil disimpan, saat ini kalori-mu adalah : '.$userTotalCaloriesByDay,
             'suggested_menu' => $getSuggestionMenus,
         ];
 

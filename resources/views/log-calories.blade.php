@@ -53,19 +53,21 @@
 
             <br/>
             
-            <div class="alert alert-success" role="alert">
-                @if (isset($success))
-                    {{ $success }}
-                @endif
-                Success calculate calories, your calories today : 187 kcals
-            </div>
+            @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
 
-            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                Menu Selanjutnya : 250 gram daging ayam atau sapi tanpa lemak
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+            @if (session('suggested_menu'))
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <p>{{ session('suggested_menu')->menu }}</p>
+                    <p>Jumlah kalori {{ session('suggested_menu')->calories }} Kkal</p> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
 
             @if (count($log_calories) > 0)
                 <div class="col-md-12">
